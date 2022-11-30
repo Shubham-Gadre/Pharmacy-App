@@ -1,0 +1,83 @@
+﻿@model MedicinesViewModel
+
+<div class="container px-5 my-5">
+    <form id="contactForm">
+        <div class="mb-3">
+            <label class="form-label" for="medcineImage">Medcine Image</label>
+            <input class="form-control" id="medcineImage" type="file" placeholder="Medcine Image" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="medcineImage:required">Medcine Image is required.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="medcineName">Medcine Name</label>
+            <input class="form-control" id="medcineName" type="text" placeholder="Medcine Name" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="medcineName:required">Medcine Name is required.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="price">Price</label>
+            <input class="form-control" id="price" type="number" placeholder="Price" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="price:required">Price is required.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="dosageForm">Dosage Form</label>
+            <input class="form-control" id="dosageForm" type="text" placeholder="Dosage Form" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="dosageForm:required">Dosage Form is required.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="minimumOrderQuantity">Minimum Order Quantity</label>
+            <input class="form-control" id="minimumOrderQuantity" type="number" placeholder="Minimum Order Quantity" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="minimumOrderQuantity:required">Minimum Order Quantity is required.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="usage">Usage</label>
+            <input class="form-control" id="usage" type="text" placeholder="Usage" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="usage:required">Usage is required.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="manufacturedBy">Manufactured By</label>
+            <input class="form-control" id="manufacturedBy" type="text" placeholder="Manufactured By" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="manufacturedBy:required">Manufactured By is required.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="form-control" id="description" type="text" placeholder="Description" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <div class="invalid-feedback" data-sb-feedback="description:required">Description is required.</div>
+        </div>
+        <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">
+                <div class="fw-bolder">Form submission successful!</div>
+                <p>To activate this form, sign up at</p>
+                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+            </div>
+        </div>
+        <div class="d-none" id="submitErrorMessage">
+            <div class="text-center text-danger mb-3">Error sending message!</div>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+                <form method="post" asp-action="AddNewProduct" asp-controller="Pharmacy" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="MedicineName"></label>
+        <input asp-for="MedicineName" class="form-control" />
+        <span asp-validation-for="MedicineName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MedicineDescription"></label>
+        <input asp-for="MedicineDescription" class="form-control" />
+        <span asp-validation-for="MedicineDescription" class="text-danger"></span>
+    </div>
+    @*<div class="form-group">
+        <label asp-for="ProductImage" class="control-label"></label>
+        <div class="custom-file">
+            <input asp-for="ProductImage" class="custom-file-input" id="productImage">
+            <label class="custom-file-label" for="productImage">Choose product image....</label>
+        </div>
+    </div>*@
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Upload</button>
+    </div>
+</form>

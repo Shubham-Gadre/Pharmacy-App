@@ -1,0 +1,26 @@
+﻿@model MedicinesViewModel
+
+
+<form method="post" asp-action="AddNewProduct" asp-controller="Pharmacy" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="MedicineName"></label>
+        <input asp-for="MedicineName" class="form-control" />
+        <span asp-validation-for="MedicineName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MedicineDescription"></label>
+        <input asp-for="MedicineDescription" class="form-control" />
+        <span asp-validation-for="MedicineDescription" class="text-danger"></span>
+    </div>
+    @*<div class="form-group">
+        <label asp-for="ProductImage" class="control-label"></label>
+        <div class="custom-file">
+            <input asp-for="ProductImage" class="custom-file-input" id="productImage">
+            <label class="custom-file-label" for="productImage">Choose product image....</label>
+        </div>
+    </div>*@
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Upload</button>
+    </div>
+</form>
+

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MedicinesViewModel>
+
+<table class="table .table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">MedicineManufacturedBy</th>
+            <th scope="col">Usage</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var medicines in Model)
+        {
+            <tr>
+                <td>@medicines.MedicineName</td>
+                <td>@medicines.MedicinePrice</td>
+                <td>@medicines.MedicineManufacturedBy</td>
+                <td>@medicines.MedicineUsage</td>
+                <td colspan="2"><a>Edit</a> "|" <a>Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
